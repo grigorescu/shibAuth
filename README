@@ -1,0 +1,37 @@
+Description:
+------------
+
+This library provides a simple authentication interface to a Shibboleth
+protected area, when using the Requests[1] Python HTTP library.
+
+The ShibAuth class extends the request.auth.AuthBase class.
+
+Example:
+--------
+
+import requests
+from shibAuth.auth import shibAuth
+
+r = requests.get("https://secret.example.com/?name=Waldo",
+                 auth=shibAuth("user", "password"))
+
+Note: To prevent having to reauthenticate with each request,
+using a request.Session object is recommended.
+
+Requirements:
+-------------
+
+ - Requests[1]
+ - BeautifulSoup[2]
+
+Configuration:
+--------------
+
+Edit shibAuth/config.py to fit your site's configuration.
+
+References:
+-----------
+
+[1] - <http://docs.python-requests.org>
+[2] - <http://www.crummy.com/software/BeautifulSoup/>
+This file was modified by PyCharm 2.0.1 for binding GitHub repository
